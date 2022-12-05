@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b3f209e-3001-4b5d-965a-db255abda12a" name="Changes" comment="" />
+    <list default="true" id="4b3f209e-3001-4b5d-965a-db255abda12a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/HashTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TextScan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/canterbury.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gettysburg.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/keywords.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/proverbs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/that_bad.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +20,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IVm6ulbaymkT3ckfV3lCTAT7WY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -22,6 +36,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java (CSCI 1933)\project5\src" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -32,5 +51,16 @@
       <updated>1670274954763</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
