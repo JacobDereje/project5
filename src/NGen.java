@@ -16,6 +16,9 @@ public class NGen <T> {
         next = link;
     }
 
+    public NGen(T item) {
+    }
+
     // selectors
 
     public T getData() {

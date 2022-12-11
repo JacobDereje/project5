@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class HashTable<T>{
     NGen<T>[] hashTable;
     int pos = 0;
-    public HashTable() {
-        hashTable = new NGen[100];
+    public HashTable(int length) {
+        hashTable = new NGen[length];
     }
 
 
@@ -15,22 +15,47 @@ public class HashTable<T>{
 
     //TODO: Implement a simple hash function
     public int hash1(T item) {
-        String token = item.toString();
-        int hash = 0;
-        for (int i=0; i<token.length(); i++) {
-            hash += token.charAt(i);
+        String str = item.toString();
+        int sum = 0;
+        for(int i = 0; i < str.length(); i++) {
+            sum += str.charAt(i);
         }
-        return hash % 100;
+        return sum % hashTable.length;
+
     }
 
     //TODO: Implement a second (different and improved) hash function
     public int hash2(T item) {
-        return -1;
+        String str = item.toString();
+        int hash = 0;
+        for(int i = 0; i < str.length(); i++) {
+            hash = (hash * 31) + str.charAt(i);
+        }
+        return Math.abs(hash % hashTable.length);
+
     }
+
 
     //TODO: Implement the add method which adds an item to the hash table using your best performing hash function
     // Does NOT add duplicate items
     public void add(T item) {
+        int hash = hash2(item);
+        if(hashTable[hash] == null) {
+            hashTable[hash] = new NGen<T>(item);
+//        } else {
+            NGen<T> current = hashTable[hash];
+            while(current.getNext() != null) {
+                if(current.getData().equals(item)) {
+                    return;
+                }
+                current = current.getNext();
+            }
+//            if(current.getData().equals(item)) {
+//                return;
+//            }
+            current.setNext(new NGen<T>(item));
+        }
+
 
     }
 
@@ -62,10 +87,49 @@ public class HashTable<T>{
     // - average collision length
     // - length of longest chain
     public void display() {
+        int empty = 0, nonEmpty = 0, total = 0, max = 0;
+        double avg = 0;
+        for (int i=0; i<hashTable.length; i++) {
+            if (hashTable[i] == null) {
+                empty++;
+            } else {
+                nonEmpty++;
+                int count = 1;
+                NGen<T> temp = hashTable[i];
+                while (temp.getNext() != null) {
+                    count++;
+                    temp = temp.getNext();
+                }
+                if (count > max) {
+                    max = count;
+                }
+                avg += count;
+                total += count;
+                System.out.println("Index " + i + " has " + count + " words.");
+            }
+        }
+        System.out.println("Total unique words: " + total);
+        System.out.println("Empty indices: " + empty);
+        System.out.println("Nonempty indices: " + nonEmpty);
+        System.out.println("Average collision length: " + avg/nonEmpty);
+        System.out.println("Longest chain: " + max);
     }
+
+
 
     // TODO: Create a hash table, store all words from "canterbury.txt", and display the table
     //  Create another hash table, store all words from "keywords.txt", and display the table
     public static void main(String args[]) {
+        HashTable<String> hash = new HashTable<String>(100);
+        hash.addWordsFromFile("src/canterbury.txt");
+        hash.display();
+        System.out.println();
+        hash = new HashTable<String>(100);
+        hash.addWordsFromFile("src/keywords.txt");
+        hash.display();
     }
+
+
+
 }
+
