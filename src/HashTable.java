@@ -9,13 +9,10 @@ public class HashTable<T>{
         hashTable = new NGen[length];
     }
 
-
-
     //TODO: Create a constructor that takes in a length and initializes the hash table array
-
     //TODO: Implement a simple hash function
     public int hash1(T item) {
-        // This line converts the item to a string
+        //  converts the item to a string
         String str = item.toString();
         int sum = 0;
         // This loop iterates through each character in the string
@@ -106,7 +103,7 @@ public class HashTable<T>{
                 // otherwise, increment the nonempty counter
                 nonEmpty++;
                 int count = 1;
-                // create a temporary reference to the first element in the current chain
+                // creates a temporary reference to the first element in the current chain
                 NGen<T> temp = hashTable[i];
                 // iterate over the remaining elements in the chain
                 while (temp.getNext() != null) {
