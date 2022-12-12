@@ -45,27 +45,6 @@ public class HashTable<T>{
     //TODO: Implement the add method which adds an item to the hash table using your best performing hash function
     // Does NOT add duplicate items
     public void add(T item) {
-//        int hash = hash2(item);
-//        // This checks if there is no element at the index determined by the hash in the hash table
-//        NGen<T> current = hashTable[hash];
-//        if (hashTable[hash] == null || current.getData().equals(item)) {
-//            NGen<T> temp = new NGen<T>(item, null);
-//            current = temp;
-//            return;
-//        }
-//        // This loop iterates through the linked list at the index determined by the hash in the hash table until it reaches the end
-//        while (current.getNext() != null) {
-//            // This checks if the item is already present in the linked list
-//            if (current.getData().equals(item)) {
-//                return;
-//            }
-//            current = current.getNext();
-//        }
-////
-////          // If the item is not already present in the linked list, this line inserts the item into the linked list
-//        current.setNext(new NGen<T>(item));
-////        }
-
             int hash = hash2(item);
             // This checks if there is no element at the index determined by the hash in the hash table
             if(hashTable[hash] == null) {
@@ -170,7 +149,7 @@ public class HashTable<T>{
         hash.addWordsFromFile("src/canterbury.txt");
         hash.display();
         System.out.println();
-        hash = new HashTable<String>(100);
+        hash = new HashTable<String>(150);
         hash.addWordsFromFile("src/keywords.txt");
         hash.display();
     }
